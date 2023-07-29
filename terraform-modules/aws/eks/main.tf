@@ -2,11 +2,11 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 3.37.0"
+      version = ">= 5.10.0"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = ">= 2.1.0"
+      version = ">= 2.22.0"
     }
   }
 }
@@ -84,7 +84,7 @@ resource "aws_iam_role_policy_attachment" "amazon_ebs_csi_driver" {
 
 module "eks" {
   source           = "terraform-aws-modules/eks/aws"
-  version          = "18.23.0"
+  version          = "19.15.4"
   cluster_name     = var.cluster_name
   cluster_version  = var.cluster_version
   enable_irsa      = var.enable_irsa
